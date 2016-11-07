@@ -19,6 +19,7 @@ Jump to:
 
 - [**API**](#api)
 - [**Primitives**](#primitives)
+- [**Widgets**](#widgets)
 
 ### API
 
@@ -212,25 +213,60 @@ The rendered list is **responsive** to its parent container, meaning that the
 width and height of the items are calculated based on the container height
 divided by the number of grid rows.
 
-## FAQ: Why not [gridster](https://github.com/ducksboard/gridster.js)?
+### Widgets
 
-- Their README reads Ducksboard is no longer active in their development. There
-  are a few notable forks but it's hard to assert their
-  [reliability.](https://github.com/dustmoo/gridster.js/issues)
-- gridster works vertically while our solution works both vertically and
-  horizontally.
-- Our lib contains over 5 times fewer code.
-- gridster collisions are [very
-  basic](https://github.com/ducksboard/gridster.js/issues/54), we pushed towards
-  better UX and found alternative ways for dealing with collisions.
-- We wanted out-of-the-box responsiveness, and the entire grid system was build
-  fluid, relative to any parent container.
-- We needed the grid logic to be a DOM-less lib outside the jQuery plugin. This
-  allows us to compute grid positions on the server-side and run kick-ass fast
-  tests with Node.
-- Another more particular thing we needed was widgets that had height=0, which
-  means they stretch on however many rows a grid has. We show timelines like
-  this. It also works for width=0.
+#### widget demo page widget.html
+```html
+<div id="{id}">
+    <input type="hidden" id="param1" value="{param1}"/>
+    <input type="hidden" id="param2" value="{param2}"/>
+    <div class="div">
+    </div>
+</div>
+<script>
+    $(function() {
+        dashboard_widget["{id}"] = {  //necessary
+            parent: $("#{id}"),
+            init: function() {
+               this.parent.on("onRefresh", function(e, options) {
+                   alert("refresh triggered")
+               })
+            }
+        };
+        dashboard_widget['{id}'].init();
+    })
+</script>
+```html
 
-*Please check [demo page](http://hootsuite.github.io/grid/) or code directly for
-investigating these assumptions.*
+#### widget demo settings page widget_settings.html
+```html
+<div id="{id}">
+    <div>
+        <Label>param1:</Label><input type="text" name="param1" id="param1">
+    </div>
+
+    <div>
+        <Label>param2:</Label><input type="text" name="param2" id="param2">
+    </div>
+</div>
+
+<script>
+    $(function() {
+        (function() {
+            var temp = {
+                parent: $("#{id}"),
+                init: function() {
+                    var _this = this;
+                    this.parent.one("submit", function() {
+                        return {
+                            "param1": _this.parent.find("#param1").val(),
+                            "param2": _this.parent.find("#param2").val()
+                        }
+                    })
+                }
+            }
+            temp.init();
+        })();
+    })
+</script>
+```html
