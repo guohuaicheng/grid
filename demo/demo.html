@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Demo</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="../src/gridList.js"></script>
+    <script src="../src/jquery.gridList.js"></script>
+    <script src="js/load.js"></script>
+</head>
+<body>
+<div class="header">
+    <a class="button remove-row">-</a>
+    <a class="button add-row">+</a>
+    <a widgetType="url" class="button add-item">Add URL Widget</a>
+    <a widgetType="iframe" class="button add-item">Add Iframe Widget</a>
+    <p>
+        <a class="github-button" href="https://github.com/hootsuite/grid" data-style="mega" data-count-href="/hootsuite/grid/stargazers" data-count-api="/repos/hootsuite/grid#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star hootsuite/grid on GitHub">GitHub</a>
+    </p>
+</div>
+<div class="grid-container">
+    <ul id="grid" class="grid">
+        <li class="position-highlight">
+            <div class="inner"></div>
+        </li>
+    </ul>
+</div>
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>

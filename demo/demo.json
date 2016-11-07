@@ -1,0 +1,37 @@
+[
+  {
+    "x": 0,
+    "y": 0,
+    "w": 1,
+    "h": 1,
+    "id": 1,
+    "widgetType": "url",
+    "url": "widgets/widget_1.html",
+    "data": {
+      "param1": "a",
+      "param2": "b"
+    },
+    "showSettings":true,
+    "showRefresh":true
+  },
+  {
+    "x": 0,
+    "y": 1,
+    "w": 1,
+    "h": 2,
+    "id": 2,
+    "showSettings":false,
+    "showRefresh":false
+  },
+  {
+    "x": 1,
+    "y": 0,
+    "w": 2,
+    "h": 2,
+    "id": 3,
+    "widgetType": "iframe",
+    "url": "http://www.baidu.com",
+    "showSettings":false,
+    "showRefresh":false
+  }
+]

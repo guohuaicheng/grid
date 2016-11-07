@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background: #E5E5E5;
+}
+
+.grid-container {
+    position: absolute;
+    top: 66px;
+    left: 0;
+    right: 10px;
+    bottom: 0;
+    /*overflow: auto;*/
+}
+
+.grid {
+    position: relative;
+    height: 100%;
+    list-style: none;
+    /* Will be modified by the grid jquery lib, depending on the items */
+    -webkit-transition: width 0.2s,
+    height 0.2s;
+    transition: width 0.2s,
+    height 0.2s;
+}
+
+.grid li {
+    position: absolute;
+    z-index: 1;
+    font-weight: bold;
+    line-height: 4em;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: top 0.2s,
+    left 0.2s,
+    width 0.2s,
+    height 0.2s,
+    font-size 0.2s,
+    line-height 0.2s;
+    transition: top 0.2s,
+    left 0.2s,
+    width 0.2s,
+    height 0.2s,
+    font-size 0.2s,
+    line-height 0.2s;
+}
+
+.grid li .inner {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #bbb;
+    top: 0;
+    bottom: 10px;
+    left: 10px;
+    right: 0;
+    -webkit-transition: background 3s;
+    transition: background 3s;
+    overflow: auto;
+}
+
+.grid li.changed .inner {
+    background: #ffff66;
+    -webkit-transition: none;
+    transition: none;
+}
+
+.grid li.ui-draggable-dragging {
+    -webkit-transition: none;
+    transition: none;
+}
+
+.grid li.position-highlight {
+    -webkit-transition: none;
+    transition: none;
+}
+
+.grid li.position-highlight .inner {
+    border: none;
+    background: #ccc;
+}
+
+.grid .controls {
+    font-weight: normal;
+    line-height: 1em;
+    height: 30px;
+    border-bottom: 1px solid #bbb;
+    -webkit-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+    margin: 0 10px 0 10px;
+    box-sizing: border-box;
+    cursor: move;
+}
+
+body > .zoom {
+    position: absolute;
+    z-index: 2;
+    border: 1px solid #bbb;
+    display: none;
+    background-color: #fff;
+}
+
+body > .zoom .resize {
+    font-size: 0.6em;
+    /*float: left;*/
+    margin: 5px;
+    padding: 0.3em;
+    background: #fafafa;
+    color: #444;
+    text-decoration: none;
+    display: block;
+}
+
+body > .zoom .resize:hover {
+    background: #f1f1f1;
+    cursor: pointer;
+}
+
+.grid li:hover .controls {
+    /*opacity: 1;*/
+}
+
+.grid li .controls .icon {
+    background: url(images/ui-icons_777777_256x240.png) no-repeat;
+    width: 16px;
+    height: 16px;
+    float: right;
+    margin: 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    /*position: absolute;*/
+}
+
+.grid li .controls .icon.close {
+    background-position: -96px -128px;
+    top:5px;
+    right: 5px;
+}
+
+.grid li .controls .icon.resize {
+    background-position: -144px -48px;
+    top:5px;
+    right: 5px;
+}
+
+.grid li .controls .icon.refresh {
+    background-position: -64px -80px;
+    top:5px;
+    right: 5px;
+}
+
+.grid li .controls .icon.settings {
+    background-position: -193px -112px;
+    top:5px;
+    right: 5px;
+}
+
+.grid li .inner .content{
+    overflow: auto;
+    position: absolute;
+    top: 35px;
+    bottom: 0px;
+    left: 10px;
+    right: 10px;
+    cursor: auto;
+}
+
+.header {
+    height: 55px;
+    border-bottom: 1px solid #ccc;
+}
+
+.header .button {
+    float: left;
+    min-width: 40px;
+    height: 40px;
+    margin: 6px 0 0 10px;
+    border: solid 1px #ccc;
+    background: #fafafa;
+    color: #000;
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.header p {
+    float: left;
+    padding: 14px 0 0 10px;
+    font-size: 18px;
+    line-height: 18px;
+}

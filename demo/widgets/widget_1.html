@@ -1,0 +1,39 @@
+<div id="{id}">
+    <input type="hidden" id="param1" value="{param1}"/>
+    <input type="hidden" id="param2" value="{param2}"/>
+    <div class="div">
+    </div>
+</div>
+<script>
+    $(function() {
+        dashboard_widget["{id}"] = {
+            parent: $("#{id}"),
+            init: function() {
+                var $div = this.parent.find(".div");
+                var param1 = this.parent.find("#param1").val();
+                var param2 = this.parent.find("#param2").val();
+                $div.append("<div id='p1'>"+ param1 +"</div>")
+                $div.append("<div id='p2'>"+ param2 +"</div>")
+
+                this.parent.on("onRefresh", function(e, options) {
+                    if(options) {
+                        if(options["param1"]) {
+                            $("param1").val(options["param1"]);
+                            $div.find("#p1").html(options["param1"]);
+                        }
+                        if(options["param2"]) {
+                            $("param2").val(options["param2"]);
+                            $div.find("#p2").html(options["param2"]);
+                        }
+                    }
+                    alert("refresh triggered")
+                })
+
+                $div.on('click', function(){
+                    alert("div clicked");
+                })
+            }
+        };
+        dashboard_widget['{id}'].init();
+    })
+</script>

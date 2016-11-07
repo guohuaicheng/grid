@@ -1,0 +1,30 @@
+<div id="{id}">
+    <div>
+        <Label>param1:</Label><input type="text" name="param1" id="param1">
+    </div>
+
+    <div>
+        <Label>param2:</Label><input type="text" name="param2" id="param2">
+    </div>
+</div>
+
+<script>
+    $(function() {
+        (function() {
+            var temp = {
+                parent: $("#{id}"),
+                init: function() {
+                    var _this = this;
+                    this.parent.one("submit", function() {
+//                        debugger;
+                        return {
+                            "param1": _this.parent.find("#param1").val(),
+                            "param2": _this.parent.find("#param2").val()
+                        }
+                    })
+                }
+            }
+            temp.init();
+        })();
+    })
+</script>
