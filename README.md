@@ -236,7 +236,7 @@ divided by the number of grid rows.
         dashboard_widget['{id}'].init();
     })
 </script>
-```html
+```
 
 #### widget demo settings page widget_settings.html
 ```html
@@ -269,4 +269,4 @@ divided by the number of grid rows.
         })();
     })
 </script>
-```html
+```
