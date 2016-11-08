@@ -5,7 +5,7 @@
     // AMD. Register as an anonymous module.
     define(['jquery', 'jquery-ui', 'gridlist'], factory);
   } else {
-    factory();
+    factory(jQuery, jQuery, GridList);
   }
 }(function($, $ui, GridList) {
 
