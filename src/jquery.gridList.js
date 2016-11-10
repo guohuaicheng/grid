@@ -35,7 +35,8 @@
     draggableDefaults: {
       zIndex: 2,
       scroll: false,
-      containment: "parent"
+      containment: "parent",
+      cancel: '.content'
     },
 
     _buildElements: function() {

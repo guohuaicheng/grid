@@ -23,9 +23,6 @@ $(function() {
           onChange: function(changedItems, _newItems) {
             console.log("onChange:" + changedItems);
           }
-        },
-        {
-          cancel: '.content'
         });
     },
     error: function() {
