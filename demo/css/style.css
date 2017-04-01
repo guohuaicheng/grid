@@ -1,199 +1,194 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
 
 body {
-    background: #E5E5E5;
+  background: #E5E5E5;
 }
 
 .grid-container {
-    position: absolute;
-    top: 66px;
-    left: 0;
-    right: 10px;
-    bottom: 0;
-    /*overflow: auto;*/
+  /*position: absolute;*/
+  /*top: 66px;*/
+  /*left: 0;*/
+  /*right: 10px;*/
+  /*bottom: 0;*/
+  /*overflow: auto;*/
+  width: 600px;
+  height: 600px;
+  /*overflow: auto;*/
 }
 
 .grid {
-    position: relative;
-    height: 100%;
-    list-style: none;
-    /* Will be modified by the grid jquery lib, depending on the items */
-    -webkit-transition: width 0.2s,
-    height 0.2s;
-    transition: width 0.2s,
-    height 0.2s;
+  /*width: 600px;*/
+  /*height: 600px;*/
+  /*overflow: auto;*/
+  position: relative;
+  height: 100%;
+  list-style: none;
+  /* Will be modified by the grid jquery lib, depending on the items */
+  -webkit-transition: width .2s, height .2s;
+          transition: width .2s, height .2s;
 }
 
 .grid li {
-    position: absolute;
-    z-index: 1;
-    font-weight: bold;
-    line-height: 4em;
-    text-align: center;
-    cursor: pointer;
-    -webkit-transition: top 0.2s,
-    left 0.2s,
-    width 0.2s,
-    height 0.2s,
-    font-size 0.2s,
-    line-height 0.2s;
-    transition: top 0.2s,
-    left 0.2s,
-    width 0.2s,
-    height 0.2s,
-    font-size 0.2s,
-    line-height 0.2s;
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  font-weight: bold;
+  line-height: 4em;
+  cursor: pointer;
+  -webkit-transition: top .2s, left .2s, width .2s, height .2s, font-size .2s, line-height .2s;
+          transition: top .2s, left .2s, width .2s, height .2s, font-size .2s, line-height .2s;
 }
 
 .grid li .inner {
-    position: absolute;
-    background: #fff;
-    border: 1px solid #bbb;
-    top: 0;
-    bottom: 10px;
-    left: 10px;
-    right: 0;
-    -webkit-transition: background 3s;
-    transition: background 3s;
-    overflow: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 10px;
+  left: 10px;
+  border: 1px solid #BBB;
+  background: #FFF;
+  -webkit-transition: background 3s;
+          transition: background 3s;
+  overflow: auto;
 }
 
 .grid li.changed .inner {
-    background: #ffff66;
-    -webkit-transition: none;
-    transition: none;
+  background: #FF6;
+  -webkit-transition: none;
+          transition: none;
 }
 
 .grid li.ui-draggable-dragging {
-    -webkit-transition: none;
-    transition: none;
+  -webkit-transition: none;
+          transition: none;
 }
 
 .grid li.position-highlight {
-    -webkit-transition: none;
-    transition: none;
+  -webkit-transition: none;
+          transition: none;
 }
 
 .grid li.position-highlight .inner {
-    border: none;
-    background: #ccc;
+  border: none;
+  background: #CCC;
 }
 
 .grid .controls {
-    font-weight: normal;
-    line-height: 1em;
-    height: 30px;
-    border-bottom: 1px solid #bbb;
-    -webkit-transition: opacity 0.2s;
-    transition: opacity 0.2s;
-    margin: 0 10px 0 10px;
-    box-sizing: border-box;
-    cursor: move;
+  box-sizing: border-box;
+  margin: 0 10px 0 10px;
+  height: 30px;
+  border-bottom: 1px solid #BBB;
+  font-weight: normal;
+  line-height: 1em;
+  cursor: move;
+  -webkit-transition: opacity .2s;
+          transition: opacity .2s;
 }
 
-body > .zoom {
-    position: absolute;
-    z-index: 2;
-    border: 1px solid #bbb;
-    display: none;
-    background-color: #fff;
+body>.zoom {
+  position: absolute;
+  z-index: 2;
+  display: none;
+  border: 1px solid #BBB;
+  background-color: #FFF;
 }
 
-body > .zoom .resize {
-    font-size: 0.6em;
-    /*float: left;*/
-    margin: 5px;
-    padding: 0.3em;
-    background: #fafafa;
-    color: #444;
-    text-decoration: none;
-    display: block;
+body>.zoom .resize {
+  display: block;
+  /*float: left;*/
+  margin: 5px;
+  padding: .3em;
+  background: #FAFAFA;
+  color: #444;
+  text-decoration: none;
+  font-size: .6em;
 }
 
-body > .zoom .resize:hover {
-    background: #f1f1f1;
-    cursor: pointer;
+body>.zoom .resize:hover {
+  background: #F1F1F1;
+  cursor: pointer;
 }
 
 .grid li:hover .controls {
-    /*opacity: 1;*/
+  /*opacity: 1;*/
 }
 
 .grid li .controls .icon {
-    background: url(images/ui-icons_777777_256x240.png) no-repeat;
-    width: 16px;
-    height: 16px;
-    float: right;
-    margin: 5px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    /*position: absolute;*/
+  float: right;
+  margin: 5px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #CCC;
+  border-radius: 2px;
+  background: url(images/ui-icons_777777_256x240.png) no-repeat;
+  cursor: pointer;
+  /*position: absolute;*/
 }
 
 .grid li .controls .icon.close {
-    background-position: -96px -128px;
-    top:5px;
-    right: 5px;
+  top: 5px;
+  right: 5px;
+  background-position: -96px -128px;
 }
 
 .grid li .controls .icon.resize {
-    background-position: -144px -48px;
-    top:5px;
-    right: 5px;
+  top: 5px;
+  right: 5px;
+  background-position: -144px -48px;
 }
 
 .grid li .controls .icon.refresh {
-    background-position: -64px -80px;
-    top:5px;
-    right: 5px;
+  top: 5px;
+  right: 5px;
+  background-position: -64px -80px;
 }
 
 .grid li .controls .icon.settings {
-    background-position: -193px -112px;
-    top:5px;
-    right: 5px;
+  top: 5px;
+  right: 5px;
+  background-position: -193px -112px;
 }
 
-.grid li .inner .content{
-    overflow: auto;
-    position: absolute;
-    top: 35px;
-    bottom: 0px;
-    left: 10px;
-    right: 10px;
-    cursor: auto;
+.grid li .inner .content {
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  bottom: 0;
+  left: 10px;
+  cursor: auto;
+  overflow: auto;
 }
 
 .header {
-    height: 55px;
-    border-bottom: 1px solid #ccc;
+  height: 55px;
+  border-bottom: 1px solid #CCC;
 }
 
+.footer .button,
 .header .button {
-    float: left;
-    min-width: 40px;
-    height: 40px;
-    margin: 6px 0 0 10px;
-    border: solid 1px #ccc;
-    background: #fafafa;
-    color: #000;
-    font-size: 18px;
-    line-height: 40px;
-    font-weight: 700;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    padding: 0 10px;
+  float: left;
+  margin: 6px 0 0 10px;
+  padding: 0 10px;
+  min-width: 40px;
+  height: 40px;
+  border: solid 1px #CCC;
+  background: #FAFAFA;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 40px;
+  cursor: pointer;
 }
 
 .header p {
-    float: left;
-    padding: 14px 0 0 10px;
-    font-size: 18px;
-    line-height: 18px;
+  float: left;
+  padding: 14px 0 0 10px;
+  font-size: 18px;
+  line-height: 18px;
 }
